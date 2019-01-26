@@ -1,0 +1,30 @@
+.container {
+  position: relative;
+
+  .skills {
+    display: flex;
+    list-style-type: none;
+  }
+
+  .filter {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+    input {
+      width: 0;
+      background-color: white;
+      border: 0;
+      transition: width 200ms;
+      
+      &:focus {
+        width: 200px;
+        border-bottom: 1px solid hsla(0, 0%, 50%, 0.3);
+      }
+    }
+
+    @media print {
+      display: none;
+    }
+  }
+}

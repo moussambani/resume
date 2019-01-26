@@ -1,0 +1,27 @@
+.skill {
+  background-color: hsl(155, 66%, 43%);
+  padding: 15px;
+  border-radius: 50px;
+  margin: 5px;
+  cursor: pointer;
+  max-width: 500px;
+
+  :not(summary) {
+    transform: translateX(-10px);
+    transition: transform 200ms;
+  }
+
+  &[open] :not(summary) {
+    transform: translateX(0);
+  }
+
+  @media print {
+    summary {
+      list-style-type: none;
+  
+      &::-webkit-details-marker {
+        display:none; 
+      }
+    }
+  }
+}
