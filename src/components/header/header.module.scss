@@ -1,4 +1,39 @@
+@import 'styles/_variables.scss';
+
+
 .header {
-  display: grid;
-  grid-template-columns: 66% 1fr;
+  display: flex;
+  border-bottom: 3px solid $d1;
+  padding: $padding-outer;
+
+  .download {
+    font-family: 'awesome';
+    font-weight: 900;
+    font-size: .5em;
+    margin-left: .5em;
+    color: $d1;
+
+    @media print {
+      display: none;
+    }
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1%;
+
+    .title {
+      flex-grow: 1;
+      
+      h1 {
+        text-transform: uppercase;
+      }
+    }
+
+    .description {
+      display: block;
+      max-width: 80%;
+    }
+  }
 }
