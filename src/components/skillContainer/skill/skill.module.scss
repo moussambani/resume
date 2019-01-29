@@ -1,10 +1,12 @@
+@import 'styles/_variables.scss';
+
 .skill {
-  background-color: hsl(155, 66%, 43%);
+  background-color: $d1;
+  color: $n2;
   padding: 15px;
-  border-radius: 50px;
+  border-radius: 20px;
   margin: 5px;
   cursor: pointer;
-  max-width: 500px;
 
   :not(summary) {
     transform: translateX(-10px);

@@ -7,7 +7,8 @@ export class SkillContainer extends Component {
     super(props)
     this.state = {
       skills: null,
-      filtered: null
+      filtered: null,
+      query: ''
     }
   }
 
@@ -21,47 +22,62 @@ export class SkillContainer extends Component {
 
   filterSkills(e) {
     let query = e.target.value.toLowerCase()
+    this.setState({ query })
     let { expert, advanced } = this.state.skills
     expert = expert.filter(skill => skill.name.toLowerCase().includes(query))
     advanced = advanced.filter(skill => skill.name.toLowerCase().includes(query))
     this.setState({ filtered: { expert, advanced } })
   }
 
-  renderSkills(skills) {
+  renderOuter() {
     return (
-      <ul className={styles.skills}>
-        {skills.map(skill => {
-          return (
-            <li key={skill.name}>
-              <Skill skill={skill} />
-            </li>
-          )
-        })}
-      </ul>
+      <div className={styles.container}>
+        <div className={styles.title}>
+          <h2>Technical Skills</h2>
+          <label htmlFor="search">
+            <i className={styles.icon}></i>
+          </label>
+          <input className={styles.filter}
+            id='search'
+            type='text' onChange={(e) => this.filterSkills(e)} />
+        </div>
+        <h3>A list of tools I have gained experienced with over my career.</h3>
+        {this.renderInner()}
+      </div>
+    )
+  }
+
+  renderInner() {
+    return (
+      this.state.filtered.expert.length + this.state.filtered.advanced.length > 0 ?
+        <>
+          {this.renderSkills(this.state.filtered.expert, 'Expert')}
+          {this.renderSkills(this.state.filtered.advanced, 'Advanced')}
+        </>
+        :
+        <p>no results for "{this.state.query}"</p>
+    )
+  }
+
+  renderSkills(skills, title) {
+    return (
+      skills.length > 0 &&
+      <section className={styles.section}>
+        <h3>{title}:</h3>
+        <ul className={styles.skills}>
+          {skills.map(skill => {
+            return (
+              <li key={skill.name} className={styles.skill}>
+                <Skill skill={skill} />
+              </li>
+            )
+          })}
+        </ul>
+      </section>
     )
   }
 
   render = () => (
-    this.state.filtered ?
-      <div className={styles.container}>
-        <div className={styles.filter}>
-          <input
-            id='search'
-            type="text" onChange={(e) => this.filterSkills(e)}
-            placeholder='filter skills'
-          />
-          <label htmlFor="search">
-            <i className={'icon'} >search</i>
-          </label>
-        </div>
-        <h2>Expert:</h2>
-        {this.renderSkills(this.state.skills.expert)}
-        <h2>Advanced:</h2>
-        {this.renderSkills(this.state.skills.advanced)}
-      </div>
-
-      :
-
-      <p>Loading</p>
+    this.state.filtered ? this.renderOuter() : <p>Loading</p>
   )
 }
