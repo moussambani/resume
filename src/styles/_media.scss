@@ -1,0 +1,50 @@
+$grid-breakpoints: (
+  sm: 576px,
+  md: 800px,
+  lg: 1200px
+);
+
+@function bp($key) {
+  @if map-has-key($grid-breakpoints, $key) {
+    @return map-get($grid-breakpoints, $key);
+  }
+
+  @warn "Unknown `#{$key}` in breakpoint map.";
+  @return null;
+}
+
+@mixin d-sm {
+  @media (max-width: bp("md") - 1) {
+    @content;
+  }
+}
+
+@mixin d-md {
+  @media (min-width: bp("md")) and (max-width: bp("lg") -1) {
+    @content;
+  }
+}
+
+@mixin d-lg {
+  @media (min-width: bp("lg")) {
+    @content;
+  }
+}
+
+@mixin d-nsm {
+  @media (min-width: bp("md")) {
+    @content;
+  }
+}
+
+@mixin d-nmd {
+  @media (max-width: bp("md") - 1), (min-width: bp("lg")) {
+    @content;
+  }
+}
+
+@mixin d-nlg {
+  @media (max-width: bp("lg") - 1) {
+    @content;
+  }
+}

@@ -1,0 +1,47 @@
+@import './variables';
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400');
+
+@font-face {
+  font-family: 'awesome';
+  font-style: normal;
+  font-weight: 900;
+  src: url('https://use.fontawesome.com/releases/v5.6.3/webfonts/fa-solid-900.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'awesome-brands';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://use.fontawesome.com/releases/v5.6.3/webfonts/fa-brands-400.woff2') format('woff2');
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto', serif;
+  font-weight: 400;
+  color: $n1;
+}
+
+a {
+  color: $n1;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', serif;
+  font-weight: 100;
+}
+
+@include d-lg {
+    body {
+      width: 70%;
+      margin: 0 auto;
+      box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, .3);
+  }
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
