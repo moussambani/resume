@@ -14,7 +14,7 @@ export function Header() {
           </h1>
           <h2>Web Developer</h2>
         </div>
-        <p className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+        <p className={styles.description} contentEditable>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
       </div>
       {Contact()}
     </header>
