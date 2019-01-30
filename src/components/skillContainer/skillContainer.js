@@ -8,40 +8,48 @@ export class SkillContainer extends Component {
     this.state = {
       skills: null,
       filtered: null,
-      query: ''
+      query: '',
+      limit: 10
     }
+
+    this.loadMore = this.loadMore.bind(this)
   }
 
   componentDidMount() {
     fetch('/skills.json')
       .then(res => res.json())
       .then(json => {
-        this.setState({ skills: json, filtered: json })
+        let sorted = json.sort((a, b) => b.exposure - a.exposure)
+        this.setState({ skills: sorted, filtered: sorted })
       })
   }
 
   filterSkills(e) {
     let query = e.target.value.toLowerCase()
     this.setState({ query })
-    let { expert, advanced } = this.state.skills
-    expert = expert.filter(skill => skill.name.toLowerCase().includes(query))
-    advanced = advanced.filter(skill => skill.name.toLowerCase().includes(query))
-    this.setState({ filtered: { expert, advanced } })
+    let filtered = this.state.skills.filter(skill => skill.name.toLowerCase().includes(query))
+    this.setState({ filtered })
   }
+
+  render = () => (
+    this.state.filtered ? this.renderOuter() : <p>Loading</p>
+  )
 
   renderOuter() {
     return (
       <div className={styles.container}>
         <div className={styles.title}>
-          <h2>Technical Skills</h2>
-          <label htmlFor="search">
-            <i className={styles.icon}></i>
-          </label>
-          <input className={styles.filter}
-            id='search'
-            type='text' onChange={(e) => this.filterSkills(e)} />
+          <h1>Technical Skills</h1>
+          <div className={styles.search}>
+            <label htmlFor="search">
+              <i className={styles.icon}></i>
+            </label>
+            <input className={styles.filter}
+              id='search'
+              type='text' onChange={(e) => this.filterSkills(e)} />
+          </div>
         </div>
-        <h3>A list of tools I have gained experienced with over my career.</h3>
+        <h2>A color coded list of technologies I have experience with. The darker the color, the bigger the exposure is.</h2>
         {this.renderInner()}
       </div>
     )
@@ -49,35 +57,39 @@ export class SkillContainer extends Component {
 
   renderInner() {
     return (
-      this.state.filtered.expert.length + this.state.filtered.advanced.length > 0 ?
+      this.state.filtered.length > 0 ?
         <>
-          {this.renderSkills(this.state.filtered.expert, 'Expert')}
-          {this.renderSkills(this.state.filtered.advanced, 'Advanced')}
+          {this.renderSkills(this.state.filtered)}
         </>
         :
         <p>no results for "{this.state.query}"</p>
     )
   }
 
-  renderSkills(skills, title) {
+  renderSkills(skills) {
+    let queryActive = this.state.query.length > 0
     return (
       skills.length > 0 &&
       <section className={styles.section}>
-        <h3>{title}:</h3>
         <ul className={styles.skills}>
-          {skills.map(skill => {
+          {skills.map((skill, idx) => {
             return (
               <li key={skill.name} className={styles.skill}>
-                <Skill skill={skill} />
+                <Skill skill={skill} hidden={idx >= this.state.limit && !queryActive} />
               </li>
             )
           })}
         </ul>
+        {
+          this.state.limit < this.state.skills.length && !queryActive
+          &&
+          <button className={styles.load} onClick={this.loadMore}>show more...</button>
+        }
       </section>
     )
   }
 
-  render = () => (
-    this.state.filtered ? this.renderOuter() : <p>Loading</p>
-  )
+  loadMore() {
+    this.setState(old => ({ limit: old.limit + 5 }))
+  }
 }

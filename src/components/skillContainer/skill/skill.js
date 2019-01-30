@@ -19,11 +19,20 @@ export class Skill extends Component {
   }
 
   render() {
+    let skill = this.props.skill
+    let hidden = this.props.hidden && styles.hidden
+
+    let lightness = 25 + (10 - skill.exposure) * 3
+    let backgroundColor = `hsl(161, 59%, ${lightness}%)`
+
     return (
-      <details className={styles.skill} open={this.state.open} onClick={this.handleClick}>
-        <summary>{this.props.skill.name}</summary>
+      <details
+        className={`${styles.skill} ${hidden}`} open={this.state.open}
+        onClick={this.handleClick} style={{ backgroundColor }}
+      >
+        <summary>{skill.name}</summary>
         <p>
-          {this.props.skill.details}
+          {skill.details}
         </p>
       </details>
     )

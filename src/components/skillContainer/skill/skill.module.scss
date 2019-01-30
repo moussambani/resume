@@ -1,12 +1,21 @@
 @import 'styles/_variables.scss';
 
 .skill {
-  background-color: $d1;
   color: $n2;
   padding: 15px;
   border-radius: 20px;
   margin: 5px;
   cursor: pointer;
+
+  p {
+    margin: 5px 0 0 0;
+  }
+
+  &.hidden {
+    @media not print {
+      display: none;
+    }
+  }
 
   :not(summary) {
     transform: translateX(-10px);
@@ -24,6 +33,10 @@
       &::-webkit-details-marker {
         display:none; 
       }
+    }
+
+    summary ~ p {
+      display: none;
     }
   }
 }

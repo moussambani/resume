@@ -4,10 +4,39 @@
   position: relative;
   width: 45%;
 
+  .title {
+
+    h1 {
+      display: inline-block;
+      margin-bottom: 0;
+    }
+
+    .search {
+      display: inline-block;
+
+      .filter {
+        width: 0;
+        background-color: $bg1;
+        border: 0;
+        transition: width 200ms;
+        padding: 1px;
+        
+        &:focus, &:hover {
+          width: 100px;
+          outline: none;
+          border-bottom: 2px solid transparentize($n1, .8);
+        }
+    
+        @include hideprint
+      }
+    }
+  }
+
   .skills {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
+    padding: 0;
 
     .skill {
       max-width: 80%;
@@ -19,29 +48,13 @@
     margin: 1em 0;
   }
 
-  .filter {
-    display: inline-block;
-    width: 0;
-    background-color: $bg1;
-    border: 0;
-    transition: width 200ms;
-    padding: 1px;
-    
-    &:focus {
-      width: 100px;
-      outline: none;
-      border-bottom: 2px solid transparentize($n1, .8);
-    }
+  .load {
+    background: $bg1;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
 
-    @media print {
-      display: none;
-    }
-  }
-}
-
-.title {
-  h2 {
-    display: inline-block;
+    @include hideprint
   }
 }
 
@@ -51,7 +64,5 @@
   font-weight: 900;
   margin: 0 10px;
 
-  @media print {
-    display: none;
-  }
+  @include hideprint
 }
