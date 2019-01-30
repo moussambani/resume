@@ -6,7 +6,7 @@ export function Project(props) {
   let proj = props.project
 
   return (
-    <>
+    <section>
       <h2>{`${proj.name} (${proj.duration})`}</h2>
       <p>{proj.description}</p>
       <h3>My contributions:</h3>
@@ -15,6 +15,6 @@ export function Project(props) {
           return <li>{r}</li>
         })}
       </ul>
-    </>
+    </section>
   )
 }

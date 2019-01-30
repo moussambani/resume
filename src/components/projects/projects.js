@@ -22,7 +22,7 @@ export class Projects extends Component {
 
   renderProjects() {
     return (
-      <div className={styles.container}>
+      <section className={styles.container}>
         <h1>Projects</h1>
         <ul className={styles.projects}>
           {this.state.projects.map(project =>
@@ -31,7 +31,7 @@ export class Projects extends Component {
             </li>
           )}
         </ul>
-      </div>
+      </section>
     )
   }
 
