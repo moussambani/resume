@@ -33,15 +33,19 @@ h1, h2, h3 {
 }
 
 @include d-lg {
-    body {
-      width: 70%;
-      margin: 0 auto;
-      box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, .3);
+  body {
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, .3);
+  }
+}
+
+@include d-nlg {
+  body {
+    margin: 0;
   }
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
-  margin: 0;
-  padding: 0;
 }

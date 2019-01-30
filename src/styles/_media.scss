@@ -48,3 +48,9 @@ $grid-breakpoints: (
     @content;
   }
 }
+
+@mixin hideprint {
+  @media print {
+    display: none;
+  }
+}
