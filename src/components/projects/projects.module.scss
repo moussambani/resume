@@ -1,3 +1,15 @@
-.projects {
+@import 'styles/_variables.scss';
+
+.container {
   width: 45%;
+
+  .projects {
+    list-style-type: none;
+    padding: 0;
+
+    .project:not(:last-child) {
+      border-bottom: 1px solid transparentize($color: $n1, $amount: .7);
+      padding-bottom: 20px;
+    }
+  }
 }
