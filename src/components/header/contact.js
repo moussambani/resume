@@ -10,7 +10,7 @@ export function Contact() {
         </a>
       </li>
       <li className={styles.icon} icon="">
-        <a href="phone:+3620-505-3235">
+        <a href="tel:+3620-505-3235">
           +3620-505-3235
         </a>
       </li>
