@@ -2,13 +2,11 @@
 
 .container {
   position: relative;
-  width: 45%;
+  break-inside: avoid;
 
   .title {
-
     h1 {
       display: inline-block;
-      margin-bottom: 0;
     }
 
     .search {
@@ -32,10 +30,15 @@
     }
   }
 
+  .subtitle {
+    margin-top: 0;
+  }
+
   .skills {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
+    justify-content: center;
     padding: 0;
 
     .skill {
@@ -50,6 +53,7 @@
 
   .load {
     background: $bg1;
+    color: $n1;
     border: none;
     text-decoration: underline;
     cursor: pointer;
@@ -62,6 +66,7 @@
   font-family: 'awesome';
   font-style: normal;
   font-weight: 900;
+  color: $d1;
   margin: 0 10px;
 
   @include hideprint

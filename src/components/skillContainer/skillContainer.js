@@ -9,7 +9,7 @@ export class SkillContainer extends Component {
       skills: null,
       filtered: null,
       query: '',
-      limit: 10
+      limit: 15
     }
 
     this.loadMore = this.loadMore.bind(this)
@@ -49,7 +49,7 @@ export class SkillContainer extends Component {
               type='text' onChange={(e) => this.filterSkills(e)} />
           </div>
         </div>
-        <h2>A color coded list of technologies I have experience with. The darker the color, the bigger the exposure is.</h2>
+        <h3 className={styles.subtitle}>A color coded list of technologies I have experience with. The darker the color the more confident I am with the given tech.</h3>
         {this.renderInner()}
       </div>
     )
@@ -90,6 +90,6 @@ export class SkillContainer extends Component {
   }
 
   loadMore() {
-    this.setState(old => ({ limit: old.limit + 5 }))
+    this.setState(old => ({ limit: 1000 }))
   }
 }
