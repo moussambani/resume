@@ -3,6 +3,9 @@ import styles from './skill.module.scss'
 
 
 export class Skill extends Component {
+  baseColor = null
+  lightnessStep = 7
+
   constructor(props) {
     super(props)
 
@@ -11,6 +14,15 @@ export class Skill extends Component {
     }
 
     this.handleClick = this.handleClick.bind(this)
+    this.initBaseColor()
+  }
+
+  initBaseColor() {
+    let [hue, saturation, lightness] = getComputedStyle(document.documentElement)
+      .getPropertyValue('--decoration-color')
+      .split(/,/).map(s => s.replace(/%/, ''))
+
+    this.baseColor = { hue, saturation, lightness }
   }
 
   handleClick(e) {
@@ -22,13 +34,15 @@ export class Skill extends Component {
     let skill = this.props.skill
     let classes = styles.skill + (this.props.hidden ? ` ${styles.hidden}` : '')
 
-    let lightness = 30 + (5 - skill.exposure) * 6
-    let backgroundColor = `hsl(161, 59%, ${lightness}%)`
+    return skill.details.length > 0 ?
+      this.renderAsDetails(skill, classes) : this.renderAsSpan(skill, classes)
+  }
 
+  renderAsDetails(skill, classes) {
     return (
       <details
         className={classes} open={this.state.open}
-        onClick={this.handleClick} style={{ backgroundColor }}
+        onClick={this.handleClick} style={{ backgroundColor: this.calculateColor(skill.exposure) }}
       >
         <summary>{skill.name}</summary>
         <p>
@@ -36,5 +50,23 @@ export class Skill extends Component {
         </p>
       </details>
     )
+  }
+
+  renderAsSpan(skill, classes) {
+    return (
+      <div
+        className={classes} open={this.state.open}
+        style={{ backgroundColor: this.calculateColor(skill.exposure) }}
+      >
+        {skill.name}
+      </div>
+    )
+  }
+
+  calculateColor(level) {
+    let diff = level - 3
+    let lightness = this.baseColor.lightness - (this.lightnessStep * diff)
+
+    return `hsl(${this.baseColor.hue}, ${this.baseColor.saturation}%, ${lightness}%)`
   }
 }

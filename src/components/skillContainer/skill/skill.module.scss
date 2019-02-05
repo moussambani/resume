@@ -5,7 +5,16 @@
   padding: 15px;
   border-radius: 20px;
   margin: 5px;
-  cursor: pointer;
+
+  @media print {
+    padding: 10px;
+    border-radius: 15px;
+    margin: 5px;
+  }
+  
+  @at-root details#{&} {
+    cursor: pointer;
+  }
 
   p {
     margin: 5px 0 0 0;
@@ -15,15 +24,6 @@
     @media not print {
       display: none;
     }
-  }
-
-  :not(summary) {
-    transform: translateX(-10px);
-    transition: transform 200ms;
-  }
-
-  &[open] :not(summary) {
-    transform: translateX(0);
   }
 
   @media print {
