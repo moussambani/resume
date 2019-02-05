@@ -8,6 +8,11 @@
 
 .main {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: $padding-outer;
+  flex-wrap: wrap;
+
+  .left, .right {
+    width: 45%;
+  }
 }
