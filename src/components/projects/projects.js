@@ -25,18 +25,14 @@ export class Projects extends Component {
       <section className={styles.container}>
         <h1>Projects</h1>
         <ul className={styles.projects}>
-          {this.state.projects.map(project =>
-            <li className={styles.project}>
+          {this.state.projects.map((project, idx) =>
+            <li key={idx} className={styles.project}>
               <Project project={project} />
             </li>
           )}
         </ul>
       </section>
     )
-  }
-
-  renderProject() {
-    return <li>yolo</li>
   }
 
   render = () => (

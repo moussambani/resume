@@ -1,0 +1,20 @@
+.description {
+  text-align: justify;
+}
+
+.project {
+  a {
+    text-decoration: underline;
+    
+    &::before {
+      content: '';
+      font-family: 'awesome';
+      font-size: 80%;
+      margin-right: .2em;
+    }
+  }
+
+  @media print {
+    break-inside: avoid;
+  }
+}
