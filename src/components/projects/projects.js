@@ -13,7 +13,7 @@ export class Projects extends Component {
   }
 
   componentDidMount() {
-    fetch('/projects.json').then(
+    fetch('https://moussambani.github.io/resume/projects.json').then(
       res => res.json()
     ).then(json => {
       this.setState({ projects: json })

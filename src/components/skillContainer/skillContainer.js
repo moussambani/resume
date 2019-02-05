@@ -16,7 +16,7 @@ export class SkillContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('/skills.json')
+    fetch('https://moussambani.github.io/resume/skills.json')
       .then(res => res.json())
       .then(json => {
         let sorted = json.sort((a, b) => b.exposure - a.exposure)
