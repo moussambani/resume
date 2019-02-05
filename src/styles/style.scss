@@ -20,6 +20,15 @@ html {
   font-family: 'Roboto', serif;
   font-weight: 400;
   color: $n1;
+  line-height: 1.5em;
+
+  @media print {
+    font-size: 12pt;
+  }
+}
+
+:root {
+  --decoration-color: #{$decoration-color-hsl};
 }
 
 a {
@@ -49,3 +58,7 @@ h1, h2, h3 {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+@page  { 
+  margin: 1cm;  
+} 

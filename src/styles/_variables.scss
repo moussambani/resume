@@ -3,5 +3,7 @@
 $bg1: hsl(17, 6%, 94%);
 $n1: hsl(0, 0%, 10%);
 $n2: lighten($n1, 80%);
-$d1: hsl(161, 59%, 40%);
-$padding-outer: 2%;
+$decoration-color-hsl: 161, 59%, 40%;
+// $decoration-color-hsl: 305, 80%, 35%;
+$d1: hsl($decoration-color-hsl...);
+$padding-outer: 2% 5%;
