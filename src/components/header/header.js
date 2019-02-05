@@ -14,7 +14,10 @@ export function Header() {
           </h1>
           <h2>Web Developer</h2>
         </div>
-        <p className={styles.description} contentEditable>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+        <p className={styles.description} contentEditable
+          suppressContentEditableWarning={true}>
+          A former back-end developer with a recently formed enthusiasm towards front-end. I'm currently looking for a place where I could put my love towards creating things to a good use.
+        </p>
       </div>
       {Contact()}
     </header>

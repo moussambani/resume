@@ -1,6 +1,5 @@
 @import 'styles/_variables.scss';
 
-
 .header {
   display: flex;
   border-bottom: 3px solid $d1;
@@ -28,11 +27,17 @@
       h1 {
         text-transform: uppercase;
       }
+
+      h1, h2 {
+        margin: .3em 0;
+      }
     }
 
     .description {
       display: block;
+      text-align: justify;
       max-width: 80%;
+      flex-grow: 1;
     }
   }
 }
