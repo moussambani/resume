@@ -26,6 +26,10 @@
     }
   }
 
+  &.noPrint {
+    @include hideprint
+  }
+
   @media print {
     summary {
       list-style-type: none;

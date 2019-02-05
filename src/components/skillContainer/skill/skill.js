@@ -32,10 +32,12 @@ export class Skill extends Component {
 
   render() {
     let skill = this.props.skill
-    let classes = styles.skill + (this.props.hidden ? ` ${styles.hidden}` : '')
+    let classes = ['skill', ...this.props.extraClasses]
+      .map(c => styles[c])
+      .reduce((c1, c2) => `${c1} ${c2}`)
 
     return skill.details.length > 0 ?
-      this.renderAsDetails(skill, classes) : this.renderAsSpan(skill, classes)
+      this.renderAsDetails(skill, classes) : this.renderAsDiv(skill, classes)
   }
 
   renderAsDetails(skill, classes) {
@@ -52,7 +54,7 @@ export class Skill extends Component {
     )
   }
 
-  renderAsSpan(skill, classes) {
+  renderAsDiv(skill, classes) {
     return (
       <div
         className={classes} open={this.state.open}

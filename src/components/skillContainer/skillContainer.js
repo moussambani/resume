@@ -3,13 +3,15 @@ import { Skill } from './skill/skill'
 import styles from './skillContainer.module.scss'
 
 export class SkillContainer extends Component {
+  printLimit = 20
+
   constructor(props) {
     super(props)
     this.state = {
       skills: null,
       filtered: null,
       query: '',
-      limit: 15
+      limit: 15,
     }
 
     this.loadMore = this.loadMore.bind(this)
@@ -73,9 +75,19 @@ export class SkillContainer extends Component {
       <section className={styles.section}>
         <ul className={styles.skills}>
           {skills.map((skill, idx) => {
+            let extraClasses = []
+
+            if (idx > this.state.limit && !queryActive) {
+              extraClasses.push('hidden')
+            }
+
+            if (idx > this.printLimit) {
+              extraClasses.push('noPrint')
+            }
+
             return (
               <li key={skill.name} className={styles.skill}>
-                <Skill skill={skill} hidden={idx >= this.state.limit && !queryActive} />
+                <Skill skill={skill} extraClasses={extraClasses} />
               </li>
             )
           })}
@@ -90,6 +102,6 @@ export class SkillContainer extends Component {
   }
 
   loadMore() {
-    this.setState(old => ({ limit: 1000 }))
+    this.setState({ limit: 1000 })
   }
 }
