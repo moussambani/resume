@@ -5,6 +5,11 @@
   border-bottom: 3px solid $d1;
   padding: $padding-outer;
 
+  @include d-usm {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .download {
     font-family: 'awesome';
     font-weight: 900;
@@ -31,13 +36,23 @@
       h1, h2 {
         margin: .3em 0;
       }
+
+      @include d-usm {
+        text-align: center;
+      }
     }
 
     .description {
       display: block;
       text-align: justify;
-      max-width: 80%;
+      max-width: 90%;
       flex-grow: 1;
+
+      @include d-usm {
+        margin: 0 auto;
+        text-align: center;
+        margin: 3% 3%;
+      }
     }
   }
 }

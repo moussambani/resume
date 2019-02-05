@@ -8,6 +8,11 @@
   list-style-type: none;
   flex-shrink: 0;
   margin: 0;
+
+  @include d-usm {
+    padding: 0;
+    align-items: center;
+  }
   
   li {
     line-height: 2em;

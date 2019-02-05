@@ -15,4 +15,13 @@
   .left, .right {
     width: 45%;
   }
+
+  @include d-ltmd {
+    flex-direction: column;
+    align-items: center;
+
+    .left, .right {
+      width: 90%;
+    }
+  }
 }

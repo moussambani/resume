@@ -1,7 +1,7 @@
 $grid-breakpoints: (
   sm: 576px,
-  md: 800px,
-  lg: 1200px
+  md: 960px,
+  lg: 1300px
 );
 
 @function bp($key) {
@@ -13,7 +13,19 @@ $grid-breakpoints: (
   @return null;
 }
 
+@mixin d-usm {
+  @media (max-width: bp("sm") - 1) {
+    @content;
+  }
+}
+
 @mixin d-sm {
+  @media (min-width: bp("sm")) and (max-width: bp("md") - 1) {
+    @content;
+  }
+}
+
+@mixin d-ltmd {
   @media (max-width: bp("md") - 1) {
     @content;
   }
