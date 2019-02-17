@@ -1,21 +1,23 @@
-//5
-Java | Java is the language I'm most confident with, as a backend developer I used it almost exclusively for the first couple of years of my career.
-Kotlin | I used Kotlin as the language for backend development for the project called 'SuperStronger'.
-Spring Framework | I used Spring in all of the JVM based backend projects I developed.
-JavaScript | scripts for web, very good
-Sass | scripts for web, very good
-CSS3 | scripts for web, very good
-HTML5 | scripts for web, very good
-HTTP | scripts for web, very good
-Vue.js | scripts for web, very good
-//4
-TypeScript | usi it boi
-Git | pretty gut stuff
-AMQP | Docker
-//3
-React | Docker
-Angular | Docker
-//2
-Docker | Docker
-//1
-PHP | Docker
+Java | 1 | Java was practically the only language I used for the first couple of years of my career. In the last two years I started exploring other possibilites for back-end development, but up to version 8 I'm fairly confident in my Java skills.
+Kotlin | 1 | One of my current favorite languages. Since it shares most of it's ecosystem with Java I feel like I quickly became fairly confident in using it. The extra features are fantastic, it's an absolute joy for me to program in this language.
+HTTP | 1 | 
+Spring Framework | 1 | I used parts of Spring in most of my JVM based web projects. The modules I have the most experience with are web, security and JPA.
+JavaScript | 1 | 
+Sass | 1 | 
+CSS3 | 1 | 
+HTML5 | 1 | 
+Vue.js | 1 | 
+Git | 1 |
+AMQP | 1 | 
+TypeScript | 1 | 
+Unit Testing | 1 | I've written a large amount of unit tests during my time at GE, since high test coverage was part of the acceptance pipeline.
+Linux | 1 | 
+Angular | 1 | 
+TDD | 1 | I've experimented quite a bit with TDD, but I never felt like it was a good fit with the way I tend to work. However I accept that it can be good a methodology, and if my environment ancourages TDD I won't shy away from giving it a couple more tries.
+Relational Databases | 1 |
+Docker | 1 | 
+Laravel | 1 | 
+React | 1 | 
+MongoDB | 1 |
+PHP | 1 | 
+ReactiveX | 1 | 
