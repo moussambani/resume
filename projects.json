@@ -1,0 +1,38 @@
+[
+  {
+    "name": "SuperStronger",
+    "title": "Full-stack developer",
+    "duration": "07/2018 - present",
+    "description": "SuperStronger is an experiment aimed towards helping people counsciously and effectively control their own habits. At the current stage of the project the main goal is to change habits related to weight, such as eating end exercising.",
+    "contribution": [
+      "Developing the back-end using Kotlin and Spring Boot",
+      "Implementing OAuth login using Spring Security and the Facebook API",
+      "Creating a front-end using Angular 6 (TypeScript)",
+      "Implementing a group chat application using WebSocket + Stomp",
+      "Implementing payment using Barion as backend",
+      "Building a basic infrastructure on AWS"
+    ]
+  },
+  {
+    "name": "Yngage",
+    "title": "Full-stack developer",
+    "duration": "01/2018 - present",
+    "description": "An employee satisfaction survey service specifically targeting the \"Y\" generation.",
+    "contribution": [
+      "Developing the back-end using Laravel",
+      "Creating a front-end using Vue.js",
+      "Implementing administrator functionalities for managing surveys",
+      "Building a <a href='https://yngage.hu'>home page</a> based on the client's specifications"
+    ]
+  },
+  {
+    "name": "GE Healthcare Analytics Framework",
+    "title": "Back-end developer",
+    "duration": "06/2016 - 03/2017",
+    "description": "A microservices based application for storing, combining and executing medical algorithms.",
+    "contribution": [
+      "Setting up the service skeletons, prototyping the service-to-service communication using AMQP",
+      "Participating in the design and implementation of the algorithm orchestration DSL"
+    ]
+  }
+]
