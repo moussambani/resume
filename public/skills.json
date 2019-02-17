@@ -1,0 +1,117 @@
+[
+  {
+    "name": "Java",
+    "exposure": "5",
+    "details": "Java was practically the only language I used for the first couple of years of my career. In the last two years I started exploring other possibilites for back-end development, but up to version 8 I'm fairly confident in my Java skills."
+  },
+  {
+    "name": "Kotlin",
+    "exposure": "5",
+    "details": "One of my current favorite languages. Since it shares most of it's ecosystem with Java I feel like I quickly became fairly confident in using it. The extra features are fantastic, it's an absolute joy for me to program in this language."
+  },
+  {
+    "name": "HTTP",
+    "exposure": "5",
+    "details": ""
+  },
+  {
+    "name": "Spring Framework",
+    "exposure": "4",
+    "details": "I used parts of Spring in most of my JVM based web projects. The modules I have the most experience with are web, security and JPA."
+  },
+  {
+    "name": "JavaScript",
+    "exposure": "4",
+    "details": ""
+  },
+  {
+    "name": "Sass",
+    "exposure": "4",
+    "details": ""
+  },
+  {
+    "name": "CSS3",
+    "exposure": "4",
+    "details": ""
+  },
+  {
+    "name": "HTML5",
+    "exposure": "4",
+    "details": ""
+  },
+  {
+    "name": "Vue.js",
+    "exposure": "4",
+    "details": ""
+  },
+  {
+    "name": "Git",
+    "exposure": "4",
+    "details": ""
+  },
+  {
+    "name": "AMQP",
+    "exposure": "3",
+    "details": ""
+  },
+  {
+    "name": "TypeScript",
+    "exposure": "3",
+    "details": ""
+  },
+  {
+    "name": "Unit Testing",
+    "exposure": "3",
+    "details": "I've written a large amount of unit tests during my time at GE, since high test coverage was part of the acceptance pipeline."
+  },
+  {
+    "name": "Linux",
+    "exposure": "3",
+    "details": ""
+  },
+  {
+    "name": "Angular",
+    "exposure": "3",
+    "details": ""
+  },
+  {
+    "name": "TDD",
+    "exposure": "2",
+    "details": "I've experimented quite a bit with TDD, but I never felt like it was a good fit with the way I tend to work. However I accept that it can be good a methodology, and if my environment ancourages TDD I won't shy away from giving it a couple more tries."
+  },
+  {
+    "name": "Relational Databases",
+    "exposure": "2",
+    "details": ""
+  },
+  {
+    "name": "Docker",
+    "exposure": "2",
+    "details": ""
+  },
+  {
+    "name": "Laravel",
+    "exposure": "2",
+    "details": ""
+  },
+  {
+    "name": "React",
+    "exposure": "2",
+    "details": ""
+  },
+  {
+    "name": "MongoDB",
+    "exposure": "2",
+    "details": ""
+  },
+  {
+    "name": "PHP",
+    "exposure": "1",
+    "details": ""
+  },
+  {
+    "name": "ReactiveX",
+    "exposure": "1",
+    "details": ""
+  }
+]
