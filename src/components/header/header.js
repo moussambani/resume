@@ -12,11 +12,11 @@ export function Header() {
             Fekete Viktor
             <a href="/fekete_viktor.pdf" className={styles.download}></a>
           </h1>
-          <h2>Web Developer</h2>
+          <h2>Software Guy</h2>
         </div>
         <p className={styles.description} contentEditable
           suppressContentEditableWarning={true}>
-          A former back-end developer with a recently formed enthusiasm towards front-end. I'm currently looking for a place where I could put my love towards creating things to a good use.
+          A developer with various interests. As a true generalist I can be useful in almost any area related to development, but also need to have variety in my work.
         </p>
       </div>
       {Contact()}

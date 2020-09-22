@@ -10,7 +10,7 @@ export function Project(props) {
 
   return (
     <section className={styles.project}>
-      <h2>{`${proj.name} (${proj.duration})`}</h2>
+      <h2 dangerouslySetInnerHTML={createMarkup(proj.name + ` (${proj.duration})`)}></h2>
       <p className={styles.description}>{proj.description}</p>
       <h3>My contributions:</h3>
       <ul className={styles.contrib}>

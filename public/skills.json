@@ -55,6 +55,21 @@
     "details": ""
   },
   {
+    "name": "Jenkins",
+    "exposure": "3",
+    "details": ""
+  },
+  {
+    "name": "Bash",
+    "exposure": "4",
+    "details": ""
+  },
+  {
+    "name": "Gradle",
+    "exposure": "4",
+    "details": ""
+  },
+  {
     "name": "TypeScript",
     "exposure": "3",
     "details": ""
